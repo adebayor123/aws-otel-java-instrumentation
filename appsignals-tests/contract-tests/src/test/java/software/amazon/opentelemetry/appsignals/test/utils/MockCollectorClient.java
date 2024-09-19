@@ -153,8 +153,7 @@ public class MockCollectorClient {
                       .map(x -> x.getName())
                       .collect(Collectors.toSet());
 
-              return (!exported.isEmpty() && current.size() == exported.size())
-                  && receivedMetrics.containsAll(presentMetrics);
+              return (!exported.isEmpty() && receivedMetrics.containsAll(presentMetrics));
             });
 
     return exportedMetrics.stream()
